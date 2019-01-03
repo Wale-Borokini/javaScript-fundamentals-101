@@ -1,0 +1,1377 @@
+(WE ARE WRITING CODE INSIDE OUR SCRIPT ELEMENT FROM THE SCRIPT TAG IN OUR INDEX.HTML)
+
+We can load our console in   "index.html  & index2.html"
+but we will write our scripts in   "helloworld.js"
+
+
+
+we can't just add javascript to our web page. the browser will window it as a text. so in order for the browser to understand our javascript, we use the script element.
+we can use the script element in two ways.
+1. writing code directly inside our script element.
+2. Opening an external javascript file and linking our html pages to them.
+
+alert("Hello, World");
+
+Hello, World is a string. (it is also a string literal)
+ from hello world down to the colon is a string.
+It is a string of characters. they are types of data that allows us to work with different types of data in our code. javaScript gave us strings so we can work text in our code. To create a string, we use two double quotes.
+we can also create strings with a single quote. 
+
+alert("It's Hello, World");
+This is perfectly fine (it doesn't matter if there is a single quote on the its )
+
+
+
+A variable is a box of memory that we store stuffs in. To create a variable, we say:
+Var.  var is a keyword. then afer the var keyword, we must provide a name for our variable.
+we can not begin a variable name with a number. something textual is sufficient for a variable name.  
+Do not forget to include a semi colon after your variable name or statement .
+
+var myvariable;		//undefined. but a variable declaration statement.
+
+
+
+myvariable = " Hello World";		//an assignment statement and a variable initialization
+
+alert(myvariable);
+
+
+variables are declared, defined, then we use them in our code.
+
+we can do the declaration and initialization all in one statement by saying:
+
+
+
+var myvariable = "Hello, World!";
+
+alert(myvariable);
+
+var helloWorld = "Hello, World!";
+
+alert(myvariable);
+
+
+
+
+It is a good to always give your variable a name that relates to the variable. It is the convention of javascript to to name your variables in camel case fashion.
+
+hello_world. An underscore doesn't follow javascript convention. it follows php conventions. It does not matter what language you are writting in, but follow the conventions of the language.
+
+It is bad practice to create a variable without the var keyword.
+
+javascript is case sensitive. eg of a typo that can bug your system
+
+var helloWorld = "Hello, World!";
+helloWoRld = "Hello, world 2!"
+alert(myvariable);
+
+
+
+string literals  "Hello, World";
+
+Numeric literals 10;
+
+fractional numbers 3.14
+
+boolean value    A boolean value can either be true or false.eg.
+var isBoolean - false;
+
+
+
+Basic Data types. NUMBERS AND STRINGS.
+4 + 5 is an addition operation.
+An operator is a symbol that performs some type of operation.
++	Addition operator
+-	Subtraction operator
+*	Multiplication
+/	Division
+%	Modulus
+++	Increment
+--	Decrement
+
+The numbers are called operands. 4 & 5. Four is on the left hand & 5 is on the right hand side
+
+= is called the assignment operator. it takes whatever is on the right hand side of the equal sign & then it assigns it to the variable on the left hand side of the operator.
+
+
+**NOTE** (// single line comment, /* */. multi-line comment)
+
+
+substraction operator.
+ var sum = 4 + 5;
+ var difference = 4 - 5;
+
+ we can put above two lines in one statement(defining multiple variABLES in a single statement. we must seperate each variable with a coma:
+ var sum = 4 + 5,
+ 	 difference = 4 - 5; //-1
+ 	 product = 4 * 5, // 20
+ 	 quotient = 4 / 5; // .8
+ 	 
+
+ 	 we can have as many operations as we want. we will introduce another variable called foo
+just like in normal maths, it will follow bodmas
+
+
+ var foo = 4 + 5 * 6 - 8;
+
+ even if it was like this.
+  var foo = 4 - 5 * 6 - 8;			. the order of operation will still be from right to left.(addition and substraction are on the same level of operation in javascript) because javascript reads from left to right
+
+we can modify the order of operation by using parentheses.		 var foo = 4 - 5 * (6 - 8);		. the bracket will have to execute first.
+
+Math in Javascript is the same as maths in reality.
+
+
+USING A VARIABLE IN A MATHEMATICAL OPERATION
+
+var foo = 4 - 5 * (6 - 8), // 14
+	bar = foo + 1; // 15
+
+	foo is still 14, even sfter line 2 executes.
+
+
+We can apply some of the arithmetic informations to strings.
+there are times we want to (concatenate) join two or more strings together to create a new string.
+
+the concatenation operator is the plus sign. which makes sense because we are adding two strings together to form one string.
+eg.
+
+var foo = "Hello, " + "World"; //Hello, World!. this is the result
+
+
+var foo = 4 + 5; // 9
+var foo = 4 + 5 + "7"; // "97". the result is a string of "97" and not 97
+var foo = "7" + 6; // "76"		. there is a string in the operation, so it will convert 6 to a string and concatenate the two together.
+var foo = "7" + 6 + 5; // 765		. the 6 + 5 arithmetic operation never occured. 6 & 5 were converted to strings and then concatenated with "7".
+
+Var foo = 4 + 5 + "7" + 6 + 5; //"9765". Because javascript reads from keft to right, 4 + 5 gave us 9, and then 9 was converted to a string.
+
+HOW TO CONVERT NUMBERS TO STRINGS.
+var foo = 6 + ""; // "6"		. An empty string is a set quote that has nothing in there
+
+
+HOW TO CONVERT STRINGS TO NUMBERS.
+thre is a function called parseInt
+var foo = parseInt("34", 10); //34		.it was passsed on a base 10 (123456..)
+
+The parseInt only passes numeric characters eg.
+var foo = parseInt("34s57", 10);			.//it will look the first and second character and exit. it wont bother to look at the next because it is not a numeric value.
+
+if the string begins with anything but numeric character it will return a value called NaN(Not a Number)
+
+
+var foo = parseInt(3.14, 10); // 3		.it will pass it to a whole number, which is 3
+
+THERE IS ALSO A parseFloat. this will pass whatever we tell it as a floating point number. A floating point number is a fractional number.
+
+var foo = parseFloat(3.14, 10); // 3.14			.The value assigned to foo is a floating point number.
+
+parseInt and parseFloat are functions. parseInt process a string to convert it to a number
+
+
+FUNCTIONS.
+function is a keyword
+THE LONGER OUR CODE IS, THE MORE LIKELY WE ARE TO HAVE AN ERROR.
+Functions were created so that we can reuse pieces of code anytime we want to.
+we can rewrite our functions so that we we can reuse our code.
+refactor means rewriting
+
+
+a parameter is a special variable for a function. it is usable inside of the {
+	
+}. it cannot be used outside of the function that it was defined in. To define a parameter, we type a name inside the (). The name will allow us pas data to the doSomething function
+
+// set one
+var foo = 2 + 3; // 5
+foo - foo +1; // 6
+foo - foo * 8; // 48
+
+// set two
+var bar = 3 + 3; // 6
+bar = bar + 1; // 7
+bar = bar * 8; // 56
+
+function .
+unfinished
+
+
+// set one
+var foo = doSomething(2); //48
+
+//set two
+var bar = doSomething(3); //48
+
+function doSomething(paramOne) {
+	paramOne = paramOne + 3;
+	paramOne = paramOne + 1;
+	paramOne = paramOne * 8;
+
+	return paramOne;
+}
+
+alert(foo);
+alert(bar);
+
+//lets add another parameter
+
+// set one
+var foo = doSomething(2, 2); //96
+ 
+//set two
+var bar = doSomething(3, 2); //112 
+
+function doSomething(paramOne, paramTwo) {
+	paramOne = paramOne + 3;
+	paramOne = paramOne + 1;
+	paramOne = paramOne * 8;
+
+	return paramOne * paramTwo;
+}
+
+alert(foo);
+alert(bar);
+
+
+CAN WE PASS A FUNCTION TO ANOTHER FUNCTION. THE ANSWER IS YES.
+
+let us write some functions using function declaration synthax.
+
+var doSomething = function(paramOne, paramTwo, fn) {
+	paramOne = paramOne + 3;
+	paramOne = paramOne + 1;
+	paramOne = paramOne * 8;
+
+	return fn(paramOne, paramTwo);
+};
+
+function sum(paramOne, paramTwo) {
+	return paramOne + paramTwo;
+}
+
+function product(paramOne, paramTwo) {
+	return paramOne * paramTwo;
+}
+
+//set one
+var foo = doSomething(2, 2, sum); //96
+
+//set two
+var bar = doSomething(3, 2, product); //112
+
+alert(foo); 
+alert(bar);
+
+
+
+LETS SEE WHAT IT LOOKS LIKE USING AN UNANIMOUS FUNVTION.
+Lets get rid of the product function.
+WE WILL GET THE SAME RESULTS AS THE ABOVE.
+Whenever we talk about events, we will be using a lot of unanimous functions.
+
+var doSomething = function(paramOne, paramTwo, fn) {
+	paramOne = paramOne + 3;
+	paramOne = paramOne + 1;
+	paramOne = paramOne * 8;
+
+	return fn(paramOne, paramTwo);
+};
+
+function sum(paramOne, paramTwo) {
+	return paramOne + paramTwo;
+}
+
+//set one
+var foo = doSomething(2, 2, sum); //96
+
+//set two
+var bar = doSomething(3, 2, product function (paramOne, paramTwo) {
+return paramOne * paramTwo;
+}); //112
+
+alert(foo); 
+alert(bar);
+
+
+FUNCTIONS ARE VALUES, AND WE CAN USE THEM AS VARIABLES. OR WE CAN USE THEM BY PASSING THEM TO OTHER FUNCTIONS
+
+
+SCOPE.
+Scope dtermines what pieces of code can access what pieces of code. It determines the accessibility of code.
+Scope can be divided into a limitless amount of levels.
+but the topmost level is called the Global scope.
+the Global scope is globally accessible. any variable or function that we define in the global scope can be accessed anywhere with another code.		Any global variable or function is accessible by all code within the page (including 3rd party code).
+
+Global scope is the default scope. so every variable and function that we have created so far have been the global scope.
+IN FACT, the alert function is also global.
+to understand better, let us look at some code:
+
+var globalVar = "this is a global variable.";
+
+var globalFunction = function() {		
+	alert(globalVar);
+	globalVar = "Value has been modified";
+};
+
+globalFunction();
+
+alert(globalVar);
+
+
+//global function is defined outside another function, so it too is global.
+//since the alert function is global, we can access it from another function. the same with the (globalVar); function. since it is global, we can use it inside of anyother function.
+Global variables and functions can be accessed from anywhere. But there is another type of scope called FUNCTIONAL OR LOCAL SCOPE. It makes it possible for us to define a variable or function inside of another function and they can not be accessed outside of that containing function. So they are local to the function that they are defined in.
+
+e.g.	let us add a new variable inside of the global function.
+
+var globalVar = "this is a global variable.";
+
+var globalFunction = function() {	
+	var localVar = "This is a local variable.";	
+	alert(localVar);
+	globalVar = "Value has been modified";
+};
+
+globalFunction();
+
+alert(localVar);
+alert(globalVar);
+
+localVar is not defined because it is a local variable to the global scope. outside of the function, we can not access it, but inside of the function is where it lives. THE SAME thng is true for parameters if we add a parameter.
+
+var globalVar = "this is a global variable.";
+
+var globalFunction = function(paramOne) {	
+	var localVar = "This is a local variable.";	
+	alert(paramOne);
+	globalVar = "Value has been modified";
+};
+
+globalFunction(2);
+
+alert(paramOne);
+alert(globalVar);
+
+	WE GET THE VALUE OF (2) BECAUSE THAT IS WHAT WE PASSED TO THE FUNCTION.
+
+We can actually define a function inside another function.
+
+var globalVar = "this is a global variable.";
+
+var globalFunction = function() {	
+	
+	var localFunction = function() {
+		var superLocalVar = "hello world!"
+		alert(superLocalVar);
+	};
+
+	localFunction();
+	alert(superLocalVar);
+};
+
+globalFunction();
+
+alert(superLocalVar);
+alert(globalVar);
+
+	THE ERROR ON LINE 11 is because we are trying to access superLocalVar inside ofa globalFunction. Inside the globalFunction, we can not access a variable defined inside of another function.
+	we can keep defining functions inside other functions which is called NESTING. so each of the nested functions will have its own local scope.
+
+	just as globalFunction has access to anything defined inside the global scope such as globalVar. local function has access to the global scopeas well as anything defined inside of the globalFunction. because localFunction is defined within the scope of globalFunction. 
+
+
+	LET US RECREATE THE LOCAL VAR
+
+var globalVar = "this is a global variable.";
+
+var globalFunction = function(paramOne) {	
+	var localVar = "This is a local variable.";
+	
+	var localFunction = function() {
+		var superLocalVar = "hello world!"
+		alert(superLocalVar);
+		alert(localVar);
+		alert(paramOne);
+		alert(globalVar);
+	};
+
+	localFunction();
+	
+};
+
+globalFunction(2);
+
+	A FUNCTION'S {} CURLY BRACES IS A ONE WAY BOUNDARY. NOTHING DEFINED OUTSIDE OF A {}  CAN SEE INSIDE. BUT FROM INSIDE OF A {}  YOU CAN SEE OUTSIDE.
+
+
+
+
+	//IDENTIFIER LOOKUP (it is a fancy way of saying name)
+instead of saying the variable's name is globalVar, you will say the variable's identifier is globalVar.
+
+When you reference an identifier in your code, the javascript engine begins a process called identifier lookup in order to set it's value. it is trying to find a variable or function that has the same identifier. 
+eg.
+
+
+var globalVar = "this is a global variable.";
+
+var globalFunction = function(paramOne) {	
+	var localVar = "This is a local variable.";
+	
+	var localFunction = function() {
+		var superLocalVar = "hello world!"
+		alert(superLocalVar);
+		alert(localVar);
+		alert(paramOne);
+		alert(globalVar);
+		alert(foo);
+	};
+
+	localFunction();
+	
+};
+
+globalFunction(2);
+
+
+we did not define foo anywhere, so the javascript engine will first look for foo in the globalFunction(because localFunction is under globalFunction).	the foo identifier is not found, so it moves to the global scope(the topmost level of scope). it won't find a variable called foo, so it throws an error stating foo is undefined.
+
+	LETS DEFINE IT NOW.
+
+
+var globalVar = "this is a global variable.";
+
+var globalFunction = function(paramOne) {	
+	var localVar = "This is a local variable.";
+	
+	var localFunction = function() {
+		var localVar = "hello world!"
+		
+		alert(localVar);
+	};
+
+	localFunction();
+	alert(localVar);
+	
+};
+
+globalFunction(2);
+
+
+
+
+///OBJECTS
+Objects have two things which are:
+properties and methods.
+
+Properties are pieces of data that belongs to the object. they can describe the object, or just have something that has to do with the object. We don't have to always describe an object with properties.
+
+Methods are actions, they do something with the object or it's data. e.g a car uses it's tyres to move .
+
+
+//length is one of the properties of a string object. In order to access the length property, we have to use another operator
+
+var obj = "This is a string object.",
+	lenght= obj.length; // 24 // because there are 24 characters in the string. it includes white space
+
+
+	every character present in this string is considered part of it's length.
+
+	There are many methods that we can use with a string object.
+
+
+var obj = "This is a string object.",
+	lenght= obj.length; // 24
+
+obj.indexOf
+
+
+Index is just another way of saying position(the indexOf T is 0. h is 1, i is 2 )
+
+searching for "T is quite easy". let's look for is.
+
+var obj = "This is a string object.",
+	lenght= obj.length; // 24
+
+obj.indexOf("is")
+
+var obj = "This is a string object.",
+	lenght= obj.length; // 24
+
+var index = obj.indexOf("is"); // 2 (JS starts counting from left. and it gives us an index of where it found this match).
+
+
+
+var obj = "This is a string object.",
+	lenght= obj.length; // 24
+
+var index = obj.indexOf("is"); // 2
+var index2 = obj.indexOf("is", index + 1); //5
+var index3 = obj.indexOf("this"); // -1
+
+alert(index);
+alert(index2);
+alert(index3);
+
+
+	INDEXOF IS CASE SENSITIVE. THEY START AT 0 AND THEY AE POSITIVE NUMBERS. indexOf searches from left to right. it always finds the first match.
+
+
+	SEARCHING IN REVERSE ORDER
+
+var obj = "This is a string object.",
+	lenght= obj.length; // 24
+
+var index = obj.lastIndexOf("is");
+
+alert(index); // 5
+
+
+we add -1 because we want to start searching one space in reverse order.
+
+
+var obj = "This is a string object.",
+	lenght= obj.length; // 24
+
+var index = obj.lastIndexOf("is");
+var index2 = obj.lastIndexOf("is", index -1);
+
+
+alert(index); // 5
+alert(index2);
+
+The indexOf and lstIndexOf method allows us to search a string for a character or a series of character.
+WHAT IF WE WANT TO EXTRACT A SUBSTRING OF A LARGER STRING (A substring is just a smaller portion of a string)
+eg.
+ 	If we wans to extract the word this:
+
+ 	var obj = "This is a string object.",
+ 		length = obj.length; // 24
+
+ 	var substr = obj.substr(0, 4);
+
+
+ 	alert(substr);	
+
+
+
+
+ 	//	(0, 4); 		0 is the starting index that we want it to start extracting from and 4 is the amount of characters that we want it to extract.
+
+If we want to extract the word string.
+
+	var obj = "This is a string object.",
+	 		length = obj.length; // 24
+
+	var substr = obj.substr(10, 6);
+
+
+	alert(substr);	
+
+WE CAN USE THE ABOVE IN CONJUNCTION EITH THE indexOf method.
+
+	var obj = "This is a string object.",
+	 		length = obj.length; // 24
+
+	var index = obj.indexOf("st")
+	var substr = obj.substr(index, 6);
+
+
+	alert(substr);	
+
+	THE OTHER METHOD FOR EXTRACTING SUBSTRINGS IS CALLED 	var substring = obj.substring(0,)
+
+	var obj = "This is a string object.",
+	 		length = obj.length; // 24
+
+	var index = obj.indexOf("st")
+	var substr = obj.substr(index, 6);
+	var substring = obj.substring(0, 4);
+
+	alert(substring);	
+
+// If we want to extract the substring of This, we have to specify the index of the space. Otherwise, if we specify the index of the S, S will be omitted from the substring.
+
+IF YOU WANT TO USE A SUBSTRING METHOD, I RECCOMEND THIS METHOD;
+	var substr = obj.substr(index, 6);
+
+	// It doesn't modify the substring
+
+	//REPLACING A STRING WITH ANOTHER STRING
+	Eg.	replacing "object", with "value"
+
+	var obj = "This is a string object.",
+	 		length = obj.length; // 24
+
+	var newString = obj.replace("object", "value");
+	
+
+	alert(newString);
+	alert(obj);
+
+// THE REPLACE METHOD IS VERY SIMPLE. IT IS ALSO CASE SENSITIVE.
+
+//the last two methods are the:
+
+var upperCase = obj.toUpperCase(),
+	lowerCase = obj.toLowerCase();
+
+	//Just like the replace method and the substring methods, this two methods do not modify the original string value. they return a modified string
+
+
+	var obj = "This is a string object.",
+	 		length = obj.length; // 24
+
+	var upperCase = obj.toUpperCase(),
+	lowerCase = obj.toLowerCase();
+
+	alert(upperCase);
+	alert(lowerCase);
+	alert(obj);
+
+
+
+	//OBJECTS
+	We will focus on how we can create and use our own objects
+
+	notice the Object.(the capital O in object)
+	In JAVASCRIPT, DATA TYPES BEGIN WITH AN UPPERCASE E.G. :
+	Object
+	String
+	Number
+	Boolean.
+
+	//THEY ARE ALL DATA TYPES IN JAVASCRIPT. THEY ARE AS WELL FUNCTIONS IN JAVASCRIPT.
+	//	THEY BEGIN WITH AN UPPERCASE TO DINSTIGUINSH THEMSELVES FROM OTHER FUNCTIONS IN THE LANGUAGE. SO WHEN WE SEE A FUNCTION THAT BEGINS WITH AN UPPERCASE, THEN WE KNOW THIS IS A DATA TYPE.
+	// WE CAN ALSO CREATE OUR OWN DATA TYPES. BUT THAT'S IN A MORE ADVANCED COURSE.
+
+	//THIS TYPE OF CASING IS KNOWN AS PASCAL CASING eg.
+	TwoWords, GetInNow, it is exactly like camel casing, except for the first character.
+
+
+//OBJECT.
+Every value in javascript can be boiled down to Object data type. 	OBJECT is the grandaddy of all data types . everything inherits from object. 
+//Inheritance is an object oriented programming concept. in is more like genetic inheritance from a parent to a child. A CHILD data type inherits properties and methods from it's parent data type. Every object in javascript, be it a string object, number object, Boolean Object or an object that we have created has a method called toString
+
+e.g. the Object data type has a method called:	 
+toString()
+var num = 8,
+	str = num.toString(); // "8"
+
+instead of concatenating:	var num = 8,
+							  	str = num + "";
+
+toString converts the object value to a string.
+by using the toString method, we make our code a little more efficient. 
+
+inheritance is a way that we can reuse codes by basing a data type on another data type.
+
+//HOW TO CREATE OUR OWN OBJECTS.
+
+var obj = new Object();
+
+same with a string
+var str = new String();
+
+
+//HOW TO CREATE OUR OWN OBJECTS.
+
+var obj = new Object();
+
+LET'S RENAME IT FROM obj to person. then we create a property called firstName. A Method is nothing more but a function that is attached to an object.
+
+var person = new Object();
+
+person.firstName = "Wale";
+person.lastName = "Borokini";
+person.getFullName = function() {
+	return  person.firstName + " " + person.lastName;
+};
+
+alert(person.getFullName());
+
+'this' variable is very important in javascript and is the source of a lot of confusion.  'this' variable refers to the object that is calling whatever method. this variable refers to the person Object. eg.
+
+return  this.firstName + " " + this.lastName;
+};
+eg.
+
+var person = new Object();
+
+person.firstName = "Wale";
+person.lastName = "Borokini";
+person.getFullName = function() {
+	return  this.firstName + " " + this.lastName;
+};
+
+alert(person.getFullName());
+
+WE GET the same result as the above 
+var person = new Object();   . This is the Object constructor
+
+// A faster way to write the above codes is by using object literal notation. It is easier to read and a lot less repetitive. it gets it all done in one statement.
+
+var person = {}  .  the curly braces represents new Object().
+
+var person = {
+	firstName : "Wale",
+	lastName : "Borokini",
+	getFullName : function() {
+		return this.firstName + " " + this.lastName
+	}
+};
+
+alert(person.getFullName());
+
+//A.P.I  Application Property Interface.
+
+
+Object oriented programming allows us to work with complex data in a simple way.
+
+
+
+///ARRAYS
+An Array is a built in data type. it is just like Strings, Boolean, Object. It's purpose is to store a collection of values.
+
+How to create an Array;
+
+var foo = new Array();		//this is an empty Array.
+
+I'll mix the element in the Array. (Numbers, Strings and Boolean).
+
+var foo = new Array(11, "hello", true);  	.//this Array has three elements. we can say three values, but when talking about Arrays, we say elemants. Arrays have a property called length, just like strings.
+//Since it has three elements, It has a length of three(3).	length property tells us how many elements are in the Array.
+//We can access each of these elements individually by using the indexOf that element. just like strings where we have an index for the elements in the strings, we also have index for the elements in the Arrays.
+
+
+
+var foo = new Array(11, "hello", true);
+
+var length = foo.length;
+
+foo[0]   	 //This is how to access an individual element.
+
+// once we have accessed an individual element, we can do two things. 1. we can get the value:
+
+var value = foo[0];
+
+2. we can also set a new value for that element :
+
+foo[0] = 12; 		// instead of 11, we change it to 12. we can change the value of the second index as well.
+
+foo[1] = 13;
+
+
+//now foo has 3 values:  // 12, 13, true.
+
+	var foo = new Array(11, "hello", true);
+
+	var length = foo.length;
+
+	var value = foo[0];
+	foo[0] = 12;
+	foo[1] = 13;
+
+// 12, 13, true
+
+	A NEW WAY OF DOING THE ABOVE
+Instead we use an Array lateral synthax []. it is just an opening and closing square brackets
+
+var foo = []; 	//we have just created an empty Array
+
+We can specify the elements that we want to create this Array with by doing:
+
+var foo = [11, "hello", true];
+
+we can access each individual element the same way:
+
+var value = foo[0];	//if we want to access the element in imdex 0.
+
+If we want to change it's value, we simply assign a new value by saying:
+
+foo[0] = 12; ///
+
+var foo = [11, "hello", true];
+
+var value = foo[0];
+foo[0] = 12;
+
+we are not limited to the elements that we created the Array with, we can add elements. we can simply do that by using the index that we want to add a value to. eg:
+
+foo[3] = 15;	//	we have created a new element in index 3 by specifying a value with 15. we can do the same thing for index 4:
+
+foo[4] = "whatever";.
+
+WHENEVER YOU WANT TO ADD AN ELEMENT TO AN ARRAY, YOU TYPICALLY WANT TO DO THAT AT THE NEXT AVAILABLE INDEX.
+EG. 0, 1, 2	were the initial index. so we added index 3 & 4.
+WE MUST ALWAYS KEEP OUR INDEXES IN ORDER.
+
+var foo = [11, "hello", true];
+
+var value = foo[0];
+
+foo[3] = 15;
+foo[4] = "whatever"
+
+//we added index [3] and [4]
+
+
+WE CAN USE THE LENGTH PROPERTY TO GET THE NEXT INDEX.
+
+foo [foo.length] = "a new value";		//this has put that value at index 5.
+
+we can also use the push method to add a new value, by saying:
+
+foo.push("a new value");
+
+//The push method is one of those useful method, there are many others. one of them is concate. we concate multiple strings to join them together to create a larger string.
+
+There are two Arrays below, so lets concatenate this two Arrays together into a larger Array.
+
+var names = ["Olamide", "Olawale"],
+	names2 = ["Olaide", "Olawole"];
+
+var people = names.concat(names2);
+
+alert(people);
+
+we can specify as many Arrays as we want to in the concat method.	eg below
+
+
+var people = names.concat(names2, array2, array3);
+
+(CONCAT SHOULD NOT BE CONFUSED WITH JOIN.) 
+concat takes multiple Arrays and converts them into a much larger Array.
+The Join method concatenates all of the elements of an Array and seperates them based upon a seperator that we specify.
+
+The join method is actually quite useful. If we need to concatenate multiple pieces of data into a large string, it is more efficient to use an Array & store each of those pieces as an element into the Array & then call the join method. It is more useful than using the concatenation method.
+
+
+var names = ["Olamide", "Olawale"],
+	names2 = ["Olaide", "Olawole"];
+
+var people = names.concat(names2);
+
+var joined = people.join(",");
+
+alert(joined);
+
+
+		//REVERSE METHOD IN AN ARRAY
+
+var names = ["Olamide", "Olawale"],
+	names2 = ["Olaide", "Olawole"];
+
+var people = names.concat(names2);
+
+var joined = people.join(",");
+
+var reversed = people.reverse();
+
+alert(reversed);
+
+it will display the elements in a reversed order.(whatever is last is first & whatever is first is last)
+
+
+//	SORT METHOD IN AN ARRAY
+This will sort the elements in an Array.
+the elements will be sorted alphabetically
+
+var names = ["Olamide", "Olawale"],
+	names2 = ["Olaide", "Olawole"];
+
+var people = names.concat(names2);
+
+var joined = people.join(",");
+
+var reversed = people.reverse();
+
+var sorted = people.sort();
+
+alert(sorted);
+
+
+// CONDITIONS AND DECISIONS.
+Decisions means adding intelligence to your software. we developers have the ability to add intelligence by making decisions in our code. eg. if a certain criteria happens, then we might want it to do something, otherwise, we might want it to do something else.
+
+	WHAT IS AT THE HEART OF A DECISION?. IT IS CALLED A CONDITION.		A CONDITION IS A STATEMENT THAT RETURNS TRUE OR FALSE. AND WE HAVE A SET OF OPERATORS THAT WE USE TO WRITE CONDITIONAL STATEMENTS. 
+
+WE start with comparism operators.
+
+//COMPARISM OPERATORS
+Comparism operators compare two values and then return true or false, based on the comparism. eg:
+
+	//This is a condition, it is comparing the vale 5 with value 6.
+The < is the comparism. less than
+this condition will return true, because 5 is less than 6
+
+var foo = 5 < 6;
+
+if we change the operator to the > (greater than) operator, then this condition will return false. Because 5 is not greater than 6.
+
+var foo = 5 > 6;
+
+WE ALSO HAVE THE >= (greater than or equal to operator).
+This will return false. because 5 is not greater than or equal to 6
+
+var foo = 5 >= 6;
+
+but if we change the 5 to 6, then this condition will be true. because 6 is greater than or equal to 6
+
+var foo = 6 >= 6;
+
+we can also use the <= operator. this will return true because 6 is < or equal to 6
+
+var foo = 6 <= 6;
+
+SO IF WE WANT TO CHECK IF ONE VALU IS EQUAL TO ANOTHER VALUE, WE USE THE EQUALITY OPERATOR. WHICH IS ==		. we can't use the single eqal sign, because that is the assignment operator.
+
+To compare one value to another value and to see if they are equal, we use the ==
+
+var foo = 6 == 6;
+
+//THERE IS ALSO THE IMEQUALITY OPERATOR. WHICH IS  !=	//.
+it is used to determine if two values are not equal to one another
+
+In this case, this condition will return false, because 6 is equal to 6.	not non-nequal to 6
+
+var foo = 6 != 6;
+
+If we change the 6 to 5, it will return true. because 5 is not equal to 6
+
+var foo = 5 != 6;
+
+we have some exceptions to our equality and inequality. eg:
+
+Let's compare the string 6 with the number 6
+this will return true because what javascript does is it looks at the two operands. one is a string & the other is a number. it sees that they are two different types & then it converts them to the same type. which will end up b
+
+var foo = "6" == 6;
+
+To make sure one value is exactly the same as the other, we have the identity operator. it checks to make sure that the two values are of the same type & it checks if those two values are of the same value.
+THE IDENTITY OPERATOR IS THREE EQUAL SIGNS ===
+it is used to check if one value is equal to another value
+
+This will return false because the two operands are not identical. the string is not a number, so therefore it is not going to check the value
+
+var foo = "6" === 6:
+
+
+WE HAVE THE NON-IDENTITY OPERATOR. EHICH IS   !==
+
+It will return true because the two values are not identical. we have a string and a number. 
+
+var foo = "6" !==6;
+
+& it doesn't even have to be two different types of values.
+we can check for two different numbers. we can check for 7 & 6 eg.
+
+It will return true because they do not have the same value, eventhough they are of the same type.
+
+var foo = 7 !== 6;
+
+//INSTEAD OF LOOKING AT NUMBERS, LET'S LOOK AT STRINGS.
+
+ These two values are different, even if they convey the same words. one has a capital H & the other has a lowercase h
+
+this will return false. because the two values are different.
+
+var foo = "hello" === "Hello";
+
+//but if we change the both strings to lowercase h.
+
+This will return true. because the two strings are identical.
+
+var foo = "hello" === "hello";
+
+
+Really, it is not a case of identity, it is a case of equality
+
+This will return true. because hello with h is the same as hello with h
+
+var foo = "hello" == "hello";
+
+changing one of the hello. even though we are not using the identity operator, it will return false
+
+it will return false. because the two strings are completely different
+
+var foo = "Hello" == "hello";
+
+
+ALL OF OUR IDENTIFIERS NEED TO BE CASE SENSITIVE. AND THE SAME IS TRUE WITH OUR STRINGS
+
+
+
+HOW TO MAKE DECISIONS IN OUR CODE.
+We do so using an if statement .eg:
+
+we have if, our condition & a set of curly braces.
+the code in our curly braces could be one or a multiple statement. but whatever code we put inside the curly braces will execute with the condition.
+
+the code in the alert bracket will execute regardless of the the condition is true or false
+
+the condition will return true because 5 < 6 
+
+if (5 > 6) {
+	alert("5 is less than 6")
+}
+
+alert("This is outside of the if statement");
+
+
+	THERE ARE TIMES WE WANT TO EXECUTE CODE IF THE CONDITION IS FALSE. so we use the else syayement to do that. the else statement is a lot like the if statement, but just that we don't have a condition
+
+if (5 > 6) {
+	alert("5 is less than 6")
+} else {
+	alert("This is in the else block")
+}
+
+alert("This is outside of the if statement");
+
+
+//Another example. let's assign the value of hello to foo.
+
+var foo = "hello";
+
+if (foo === "Hello") {
+	
+	alert("Hello");
+}
+
+if (foo === "hello") {
+	
+	alert("hello");
+}
+
+if (foo === "hellO") {
+	
+	alert("hellO");
+}
+
+
+alert("This is outside of the if statement");
+
+
+
+WE CAN USE AN esle if. the idea is like the if and else if. except that we are performing another comparism. eg
+
+var foo = "hello";
+
+if (foo === "Hello") {
+	
+	alert("Hello");
+}
+
+else if (foo === "heLlo") {
+	
+	alert("hello");
+}
+
+else if (foo === "hellO") {
+	
+	alert("hellO");
+} else {
+	alert("no match was found")
+}
+
+
+alert("This is outside of the if statement");
+
+
+THE LOGICAL OPERATOR ALLOWS US TO COMBINE MULTIPLE SMALLER CONDITIONS INTO LARGER MORE COMPLEX CONDITIONS.
+The first we'll look at is the logical AND && (AND. IN TEXT).  it is a lot like the word AND in  English Language
+
+//e.g. 	Do you like cake AND pie?. there are many answers to this
+if we have true && true Then the result will be true
+
+// true && true = true
+// true && false = false
+// false && true = false
+// false && false = false
+
+
+var foo = "hello"
+	bar = 5; 
+
+if (foo === "hello" && bar < 6) {
+	alert("true");
+}
+
+alert("this is outside of the if statement");
+
+
+
+THE SECOND LOGICAL OPERATOR IS LOGICAL OR. IN CODE IT IS WRITTEN AS ||. IT IS MORE LIKE THE WORD OR IN ENGLISH LANGUAGE.
+
+// Do you like cake OR pie?
+// true || true = true
+// true || false = true
+// false || true = true
+// false || false = false
+
+this overall condition will return true
+
+if (foo === "hello" || bar < 6) {
+	alert("true");
+}
+
+even if we change one to be false. The result is false, because foo equals hello. but we have the overall condition that is still true.
+
+so the result is still true
+
+var foo = "hello"
+	bar = 5; 
+
+if (foo !== "hello" || bar < 6) {
+	alert("true");
+}
+
+to make it false, we change the sign of the bar
+
+var foo = "hello"
+	bar = 5; 
+
+if (foo !== "hello" || bar > 6) {
+	alert("true");
+}
+
+
+which means we will not see our alert window anymore.
+
+// THE LAST LOGICAL OPERATOR IS THE LOGICAL NOT. IT IS JUST ONE EXCLAMATION POINT.
+// UNLIKE THE LOGICAL OR AND LOGICAL AND, YOU USE THE LOGICAL NOT ON ONE BOOLEAN VALUE. what it does is that it switches the value.
+
+NOT TRUE RESULTS IN FALSE AND NOT FALSE RESULTS IN TRUE
+
+// !true = false
+// !false = true
+  //WE USE THE LOGical not at the beggining of the boolean value
+
+
+we surround the condition with parentheses in order for the condition to be executed first.
+
+var foo = "hello"
+	bar = 5; 
+
+if (!(foo !== "hello")) {
+	alert("true");
+}
+
+// Logical && and Logical || allow us to group multiple conditions into a conditions so that we can compare multiple values together.
+
+// Logical ! allows us to switch the results of a condition or multiple conditions.
+
+
+//JAVASCRIPT IS UNIQUE AND IT HAS TRUTHY AND FALSY VALUES. THE idea is that they are not true or false. they just have values of other data types. but they are treated as true & false. they are truthy and falsy.
+
+
+as far as numbers are concerned, 0 is falsy.And any other number is truthy eg.
+
+if (0) {
+	alert("hi");
+}
+
+but if we change it from 0 to any other number, we will see our alert.
+
+if (1) {
+	alert("hi");
+}
+
+// STRINGS. THE EMPTY STRING IS A FALSY VALUE. but if we add one character(even a space), it becomes truthy
+
+if (" ") {
+	alert("hi");
+}
+
+
+// Arrays are truthy.
+
+if ([]) {
+	alert("hi");
+}
+
+// Objects are truthy. We
+
+
+if ({}) {
+	alert("hi");
+}
+
+// null is a falsy value. because null is a null object.
+
+if (null) {
+	alert("hi")
+}
+alert(typeof null);
+
+
+
+//LOOPS. LOOPS ALLOWS US TO REPEAT CODES BASED UPON A CONDITION. AS LONG AS THE CONDITION IS TRUE, THEN LOOP WILL CONTINUE TO REPEAT THE SAME CODE.Loops are very useful dealing with large amount of data especially if it is within Arrays.
+
+// FOR LOOP. THE IDEA of the for loop is to execute code for a certain amount of iterations (repetition). if we have a loop that will go through ten repetitions, we can sayit will go through ten iterations.
+
+the for loop will begin with the 'for' keyword, then an "opening parantheses". then we need to specify a counter. The for loop uses a counter to specify the iterations that we go through. we use the variable "i". then we need to initialize it with a value.
+
+// if we want to process an Array, we start at 0
+
+this section of the for loop  (var i = 0) is called the iteration
+
+// initialization 	CONDITION 	increamentation. 
+For each iteration of the for loop, the increamentation section is going to execute eg.
+
+for (var i = 0; i < 10; i = i + 1) {
+	alert(i);
+}
+
+then you are using the for loop, chances are you are using it to process an Array. so we create an Array.
+
+
+var names = ["Olamide", "Olaide", "Olawale", "Oladele"];
+
+for (var i = 0; i < names.length; i = i + 1) {
+	var name = names[i];
+
+	alert(name);
+}
+
+
+if you are using a for loop to process an Array, you need to do your condition a little differently.:
+
+		i < names.length
+
+
+// because for every iteration, the length property has to be evaluated. so it has to go in counts. instaed of using a LENGTH property, we can actually create a variable inside of our loop initialization portion.
+
+we can use the variable len
+
+
+var names = ["Olamide", "Olaide", "Olawale", "Oladele"];
+
+for (var i = 0, len = names.length; i < len; i = i + 1) {
+	var name = names[i];
+
+	alert(name);
+}
+
+we have made our code more efficient
+
+// the for loop is a loop that can execute not at all. eg
+
+
+
+var names = [];
+
+for (var i = 0, len = names.length; i < len; i = i + 1) {
+	var name = names[i];
+
+	alert(name);
+}
+
+alert("this is outside of the loop");
+
+
+// the for loop has the ability not to execute whatsoever if the condition is false from the very first iteration.
+
+
+// ALSO, IN A FOR LOOP. IT WILL BE EASY TO GET STUCK IN AN INFINITE LOOP IF WE INCREAMENT BY 0. EG. if we have an elment in the names Array. look at your code well to make sure you won't get stuck in a loop.
+
+ var names = [];
+
+/*
+for (var i = 0, len = names.length; i < len; i = i + 0) {
+	var name = names[i];
+
+	alert(name);
+}
+
+alert("this is outside of the loop");
+*/
+
+// WHILE LOOP
+ IT BEGINS WITH THE while keyword and it iterates while a condition is true. and the  condition is inside a set of parantheses. then we have curly braces that we put our code in that will be repeated.
+
+ As this code is currently written, we will be in what we call infinite loop.(the loop never ends because the condition is always true). THIS IS ONE OF THE DOWNSIDES IN A LOOP. IF YOU ARE NOT CAREFUL, YOU FIND YOURSELF IN A LOOP.
+
+var names = [];
+
+while (true) {
+	
+}
+
+alert ("this is outside of the loop");
+
+
+LET'S add our elements in our Array
+
+What this loop will do is to do is to remove an element from the names Array one at a time until we get to 0.
+we want to get a new loop value for each iteration of this code.
+
+To remove an element from the names Array, we'll use  a method called  	.pop()		. We used the .push method to add an element to the end of the Array. THE .pop METHOD REMOVES the last element of the the Array
+// Whenever the loop first iterates, it'll remove th names in the Array from behind(Oladele,Olawale).
+it will do this until the length is not greater than 0
+
+
+
+var names = ["Olamide", "Olaide", "Olawale", "Oladele"];	
+while (names.length > 0) {
+	var element = names.pop();
+
+	alert(element);
+}
+
+alert ("this is outside of the loop");
+
+
+LIKE THE for loop, the while loop can also not iterate or execute at all because of the condition. If we start off with an empty Array, then the condition will definitely be false because the length is 0 & 0 can't be greater than 0
+
+
+var names = [];	
+
+while (names.length > 0) {
+	var element = names.pop();
+
+	alert(element);
+}
+
+alert ("this is outside of the loop");
+
+
+// there are times where you want the loop to iterate at least once. and we have a loop that does that for us. It is a lot like the while loop, but it is called a dowhile loop.
+we begin the loop using a do keyword.		Whatever is inside of the do keyword will execute first. & then the condition will be evaluated.
+
+
+//We don't have any element in the names Array, so it will return undefined. so we will get an undefined alert & the loop will exit.
+
+var names = [];	
+
+do {
+	var element = names.pop();
+
+		alert(element);
+} while (names.length > 0);
+	
+alert ("this is outside of the loop");
+
+// using a doWhile loop, please make sure that the code in the do portion isn't going to fail. because it is going to execute at least once.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
